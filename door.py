@@ -13,8 +13,9 @@ class Door(Sprite):
         self.rect = self.image.get_rect()
         self.player = aad_game.player
         self.player_rect = self.player.rect
-        self.place_door()
-
+        self.rect.x = 0
+        self.rect.y = 50
+        
     
     def blitme(self):
         """Draw door to the screen"""
