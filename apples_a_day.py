@@ -38,8 +38,6 @@ class ApplesADay:
         self.poison_apples = pygame.sprite.Group()
         self.witch = Witch(self)
         self.witch_rect = self.witch.rect
-        self._create_foods()
-        self._create_poisons()
    
 
     def run_game(self):
@@ -105,8 +103,14 @@ class ApplesADay:
             self.sb.prep_level()
             self.sb.prep_lives()
             self.player.center_player()
+            self.door.place_door()
             self.witch.place_witch()
             pygame.mouse.set_visible(False)
+
+            self.apples.empty()
+            self.poison_apples.empty()
+            self._create_foods()
+            self._create_poisons()
     
 
     def _update_player(self):
